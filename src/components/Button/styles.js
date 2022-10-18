@@ -11,7 +11,8 @@ export const Container = styled.button`
   font-weight: 500;
   line-height: 21px;
 
-  padding: 16px auto;
+  padding: 16px 16px;
+  border: none;
   border-radius: 10px;
 
   display: flex;

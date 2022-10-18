@@ -8,6 +8,7 @@ export const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
   padding: 19px 24px;
+  margin-bottom: 8px;
 
   border-radius: 10px;
 
@@ -23,7 +24,8 @@ export const Container = styled.div`
   }
 
   > svg {
-    margin-left: 12px;
+    margin-right: 16px;
+    color: ${({ theme }) => theme.COLORS.TEXT_COLOR_PLACEHOLDER};
   }
 
 `
