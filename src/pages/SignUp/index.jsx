@@ -20,7 +20,7 @@ export function SignUp() {
         
         <Input placeholder="Nome" type="text" icon={HiOutlineUser} />
         <Input placeholder="E-mail" type="text" icon={HiOutlineMail} />
-        <Input placeholder="Senha" type="passaword" icon={HiOutlineLockClosed} />
+        <Input placeholder="Senha" type="password" icon={HiOutlineLockClosed} />
 
         <Button title="Cadastrar" />
 
