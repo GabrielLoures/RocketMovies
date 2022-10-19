@@ -44,7 +44,7 @@ export const Form = styled.form`
     border: 8px transparent;
   }
 
-  > div {
+  > div:nth-child(1) {
     display: flex;
     gap: 40px;
   }
@@ -54,6 +54,15 @@ export const Form = styled.form`
     font-size: 20px;
     line-height: 26px;
     color: ${({ theme }) => theme.COLORS.TEXT_COLOR_GREY};
+  }
+
+  > .tags {
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_MARCADORES};
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+    gap: 24px;
   }
 
 `;

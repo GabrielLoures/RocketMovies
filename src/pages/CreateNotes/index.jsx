@@ -4,6 +4,7 @@ import { HiOutlineArrowSmLeft } from 'react-icons/hi';
 import { Textarea } from '../../components/Textarea';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { NoteItem } from '../../components/NoteItem';
 
 export function CreateNotes() {
 
@@ -30,6 +31,11 @@ export function CreateNotes() {
         <Textarea placeholder="Observações"></Textarea>
 
         <h1>Marcadores</h1>
+
+        <div className="tags">
+          <NoteItem value="React" />
+          <NoteItem isNew placeholder="Novo marcador"/>
+        </div>
 
       </Form>
 
