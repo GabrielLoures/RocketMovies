@@ -54,6 +54,7 @@ export const Form = styled.form`
     font-size: 20px;
     line-height: 26px;
     color: ${({ theme }) => theme.COLORS.TEXT_COLOR_GREY};
+    margin-bottom: 24px;
   }
 
   > .tags {
@@ -63,6 +64,12 @@ export const Form = styled.form`
 
     display: flex;
     gap: 24px;
+  }
+
+  > .buttons {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
   }
 
 `;

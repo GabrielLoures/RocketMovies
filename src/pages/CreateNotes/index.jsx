@@ -5,6 +5,7 @@ import { Textarea } from '../../components/Textarea';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { NoteItem } from '../../components/NoteItem';
+import { Button } from '../../components/Button';
 
 export function CreateNotes() {
 
@@ -35,6 +36,11 @@ export function CreateNotes() {
         <div className="tags">
           <NoteItem value="React" />
           <NoteItem isNew placeholder="Novo marcador"/>
+        </div>
+
+        <div className="buttons">
+          <Button title="Excluir Filme" isDelete />
+          <Button title="Salvar Alterações"/>
         </div>
 
       </Form>
