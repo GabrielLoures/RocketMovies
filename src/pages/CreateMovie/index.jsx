@@ -7,7 +7,7 @@ import { Input } from '../../components/Input';
 import { NoteItem } from '../../components/NoteItem';
 import { Button } from '../../components/Button';
 
-export function CreateNotes() {
+export function CreateMovie() {
 
   return (
     <Container>
