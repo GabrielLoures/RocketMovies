@@ -35,11 +35,6 @@ export function MoviePreview() {
 
       </main>
 
-      
-
-      
-
-
     </Container>
   )
 
