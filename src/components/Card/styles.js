@@ -26,8 +26,14 @@ export const Container = styled.div`
   }
 
   > p {
+    height: 46px;
     color: ${({ theme }) => theme.COLORS.TEXT_COLOR_GREY};
-    margin-top: 15px;  
+    margin-top: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   > footer {
