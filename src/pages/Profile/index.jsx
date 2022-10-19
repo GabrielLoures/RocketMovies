@@ -6,6 +6,8 @@ import { Input } from '../../components/Input';
 
 import { Button } from '../../components/Button';
 
+import { Link } from 'react-router-dom';
+
 export function Profile() {
 
   return(
@@ -13,10 +15,10 @@ export function Profile() {
     <Container>
 
       <Header>
-        <a href="#">
+        <Link to='/'>
           <HiOutlineArrowSmLeft />
           Voltar
-        </a>
+        </Link>
       </Header>
 
       <Avatar>

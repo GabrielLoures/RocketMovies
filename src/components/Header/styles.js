@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.header`
 
   grid-area: header;
@@ -25,7 +27,7 @@ export const Profile = styled.div`
 
   white-space: nowrap; // evita quebra de linha
 
-  > img {
+  > .profileImg img {
     width: 64px;
     height: 64px;
 
@@ -51,7 +53,7 @@ export const Profile = styled.div`
 
 `;
 
-export const Brand = styled.div`
+export const Brand = styled(Link)`
 
 > h1 {
     font-size: 24px;

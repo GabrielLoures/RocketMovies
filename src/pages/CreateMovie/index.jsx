@@ -7,6 +7,8 @@ import { Input } from '../../components/Input';
 import { NoteItem } from '../../components/NoteItem';
 import { Button } from '../../components/Button';
 
+import { Link } from 'react-router-dom';
+
 export function CreateMovie() {
 
   return (
@@ -15,10 +17,10 @@ export function CreateMovie() {
       <Header/>
 
       <div>
-        <a href="#">
+        <Link to="/">
           <HiOutlineArrowSmLeft />
           Voltar
-        </a>
+        </Link>
         <h1>Novo Filme</h1>
       </div>
 

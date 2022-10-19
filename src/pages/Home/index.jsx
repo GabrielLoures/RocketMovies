@@ -7,6 +7,9 @@ import {RiAddFill} from 'react-icons/ri'
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 
+import { Link } from 'react-router-dom';
+
+
 export function Home() {
 
   return(
@@ -16,7 +19,9 @@ export function Home() {
 
       <div>
         <h1>Meus Filmes</h1>
-        <Button title="Adicionar Filme" icon={RiAddFill}/>
+        <Link to="/create">
+          <Button title="Adicionar Filme" icon={RiAddFill}/>
+        </Link>
       </div>
 
       <main>
