@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Container, Background, Form } from './styles';
 
 import { HiOutlineMail, HiOutlineLockClosed, HiOutlineUser, HiOutlineArrowSmLeft } from 'react-icons/hi';
@@ -10,6 +12,16 @@ import { Link } from 'react-router-dom';
 
 export function SignUp() {
 
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  function handleSignUp() {
+
+    console.log(name, email, password)
+
+  }
+
   return(
     <Container>
 
@@ -20,11 +32,28 @@ export function SignUp() {
 
         <h2>Crie sua Conta</h2>
         
-        <Input placeholder="Nome" type="text" icon={HiOutlineUser} />
-        <Input placeholder="E-mail" type="text" icon={HiOutlineMail} />
-        <Input placeholder="Senha" type="password" icon={HiOutlineLockClosed} />
+        <Input 
+          placeholder="Nome" 
+          type="text" 
+          icon={HiOutlineUser} 
+          onChange={e => setName(e.target.value)}
+        />
 
-        <Button title="Cadastrar" />
+        <Input 
+          placeholder="E-mail" 
+          type="text" 
+          icon={HiOutlineMail}
+          onChange={e => setEmail(e.target.value)}
+        />
+
+        <Input 
+          placeholder="Senha" 
+          type="password" 
+          icon={HiOutlineLockClosed} 
+          onChange={e => setPassword(e.target.value)}
+        />
+
+        <Button title="Cadastrar" onClick={handleSignUp}/>
 
         <Link to="/">
           <HiOutlineArrowSmLeft />
