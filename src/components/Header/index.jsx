@@ -1,10 +1,13 @@
 import { Container, Profile, Brand } from './styles';
+import { useAuth } from '../../hooks/auth';
 
 import { Input } from '../Input';
 
 import { Link } from 'react-router-dom';
 
 export function Header() {
+
+  const { signOut } = useAuth();
 
   return(
 
@@ -20,7 +23,7 @@ export function Header() {
 
         <div>
           <p>Gabriel Loures</p>
-          <a href="#">sair</a>
+          <a onClick={signOut}>sair</a>
         </div>
 
         <Link className='profileImg' to="/profile">
