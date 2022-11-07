@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Container, Form } from './styles';
 import { HiOutlineArrowSmLeft } from 'react-icons/hi';
 
@@ -10,6 +11,22 @@ import { Button } from '../../components/Button';
 import { Link } from 'react-router-dom';
 
 export function CreateMovie() {
+
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState("")
+
+  function handleAddTag() {
+
+    setTags(prevState => [...prevState, newTag])
+    setNewTag("")
+
+  }
+
+  function handleRemoveTag(deleted) {
+
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
+
+  }
 
   return (
     <Container>
@@ -36,8 +53,25 @@ export function CreateMovie() {
         <h1>Marcadores</h1>
 
         <div className="tags">
-          <NoteItem value="React" />
-          <NoteItem isNew placeholder="Novo marcador"/>
+
+          {
+            tags.map((tag, index) => (
+              <NoteItem
+                key={String(index)} 
+                value={tag} 
+                onClick={() => handleRemoveTag(tag)}
+                />
+            ))
+            
+          }
+          
+          <NoteItem 
+            isNew 
+            placeholder="Novo marcador"
+            onChange={e => setNewTag(e.target.value)}
+            value={newTag}
+            onClick={handleAddTag}
+          />
         </div>
 
         <div className="buttons">
