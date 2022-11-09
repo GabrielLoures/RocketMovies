@@ -1,11 +1,14 @@
 import { Container } from './styles';
 
-import { AiFillStar, AiOutlineStar, AiOutlineClockCircle } from 'react-icons/ai';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
 
 import { Tag } from '../Tag';
+import { Stars } from '../Stars';
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function MovieHeader({ data, ...rest }) {
 
@@ -16,15 +19,12 @@ export function MovieHeader({ data, ...rest }) {
     <Container {...rest}>
 
       <div>
+        
         <h1>{data.title}</h1>
-
         <div className="stars">
-          < AiFillStar />
-          < AiFillStar />
-          < AiFillStar />
-          < AiFillStar />
-          < AiOutlineStar />
+          <Stars rating={data.rating} />
         </div>
+  
       </div>
 
       <div className="infos">

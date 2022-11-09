@@ -53,6 +53,7 @@ export function MoviePreview() {
           <MovieHeader data={{
             title: data.title,
             tags: data.tags,
+            rating: data.rating,
             date: data.created_at
           }}/>
 

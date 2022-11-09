@@ -20,13 +20,6 @@ export const Container = styled.div`
     margin-right: 20px;
   }
 
-  .stars svg {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    fill: ${({ theme }) => theme.COLORS.PINK_100};
-  }
-
   > .infos {
     display: flex;
     align-items: center;

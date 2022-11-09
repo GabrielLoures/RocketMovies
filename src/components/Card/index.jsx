@@ -1,8 +1,8 @@
 import { Container } from './styles';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-
 import { Tag } from '../Tag';
+
+import { Stars } from '../Stars';
 
 export function Card({ data, ...rest }) {
 
@@ -12,13 +12,7 @@ export function Card({ data, ...rest }) {
 
       <a>{data.title}</a>
 
-      <div>
-        < AiFillStar />
-        < AiFillStar />
-        < AiFillStar />
-        < AiFillStar />
-        < AiOutlineStar />
-      </div>
+      <Stars rating={data.rating} />
 
       <p>
         {data.description}
