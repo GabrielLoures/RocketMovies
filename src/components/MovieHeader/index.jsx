@@ -2,9 +2,15 @@ import { Container } from './styles';
 
 import { AiFillStar, AiOutlineStar, AiOutlineClockCircle } from 'react-icons/ai';
 
+import { useAuth } from '../../hooks/auth';
+import { api } from '../../services/api';
+
 import { Tag } from '../Tag';
 
 export function MovieHeader({ data, ...rest }) {
+
+  const { user } = useAuth();
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   return (
     <Container {...rest}>
@@ -23,10 +29,10 @@ export function MovieHeader({ data, ...rest }) {
 
       <div className="infos">
 
-        <img src="https://github.com/GabrielLoures.png" alt="Avatar do Usuário" />
-        <span>Por Gabriel Loures</span>
+        <img src={avatarURL} alt="Avatar do Usuário" />
+        <span>Por {user.name}</span>
         <AiOutlineClockCircle/>
-        <span>19/10/2022 às 10:32</span>
+        <span>Criado em {data.date}</span>
 
       </div>
 

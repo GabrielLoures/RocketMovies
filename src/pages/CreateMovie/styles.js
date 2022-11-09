@@ -67,8 +67,6 @@ export const Form = styled.form`
   }
 
   > .buttons {
-    display: flex;
-    gap: 40px;
     margin-top: 40px;
   }
 

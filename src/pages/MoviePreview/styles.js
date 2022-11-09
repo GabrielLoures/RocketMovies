@@ -25,6 +25,11 @@ export const Container = styled.div`
     margin-top: 40px;
   }
 
+  > .button {
+    width: 150px;
+    margin: 0px 123px;
+  }
+
 `;
 
 

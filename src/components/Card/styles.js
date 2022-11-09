@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   margin-bottom: 24px;
 
-  > h1 {
+  > a {
     color: ${({ theme }) => theme.COLORS.TEXT_COLOR_WHITE};
     font-size: 24px;
     line-height: 32px;

@@ -1,13 +1,12 @@
+
 import { Container, Profile, Brand } from './styles';
 import { useAuth } from '../../hooks/auth';
-
-import { Input } from '../Input';
 
 import { Link } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
-export function Header() {
+export function Header({children}) {
 
   const { signOut, user } = useAuth();
 
@@ -21,7 +20,7 @@ export function Header() {
         <h1>RocketMovies</h1>
       </Brand>
 
-      <Input placeholder="Pesquisar pelo título"></Input>
+      {children}
 
       <Profile>
 

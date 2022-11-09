@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Container, Form } from './styles';
 import { HiOutlineArrowSmLeft } from 'react-icons/hi';
 
@@ -8,12 +9,20 @@ import { Input } from '../../components/Input';
 import { NoteItem } from '../../components/NoteItem';
 import { Button } from '../../components/Button';
 
+import { api } from '../../services/api';
+
 import { Link } from 'react-router-dom';
 
 export function CreateMovie() {
 
+  const [title, setTitle] = useState("")
+  const [rating, setRating] = useState("")
+  const [description, setDescription] = useState("")
+
   const [tags, setTags] = useState([])
   const [newTag, setNewTag] = useState("")
+
+  const navigate = useNavigate()
 
   function handleAddTag() {
 
@@ -25,6 +34,20 @@ export function CreateMovie() {
   function handleRemoveTag(deleted) {
 
     setTags(prevState => prevState.filter(tag => tag !== deleted))
+
+  }
+
+  async function handleNewMovie() {
+
+    await api.post("/notes", {
+      title,
+      rating,
+      description,
+      tags
+    })
+
+    alert("Filme adicionado com sucesso!")
+    navigate("/")
 
   }
 
@@ -44,11 +67,22 @@ export function CreateMovie() {
       <Form>
 
         <div>
-          <Input placeholder="Título" type="text" />
-          <Input placeholder="Sua nota (de 0 a 5)" type="number" />
+          <Input 
+            placeholder="Título"
+            type="text" 
+            onChange={e => setTitle(e.target.value)}  
+          />
+          <Input 
+            placeholder="Sua nota (de 0 a 5)" 
+            type="number" 
+            onChange={e => setRating(e.target.value)}  
+          />
         </div>
 
-        <Textarea placeholder="Observações"></Textarea>
+        <Textarea 
+          placeholder="Sinopse" 
+          onChange={e => setDescription(e.target.value)}  
+        />
 
         <h1>Marcadores</h1>
 
@@ -61,8 +95,7 @@ export function CreateMovie() {
                 value={tag} 
                 onClick={() => handleRemoveTag(tag)}
                 />
-            ))
-            
+            ))          
           }
           
           <NoteItem 
@@ -75,8 +108,7 @@ export function CreateMovie() {
         </div>
 
         <div className="buttons">
-          <Button title="Excluir Filme" isDelete />
-          <Button title="Salvar Alterações"/>
+          <Button title="Salvar Alterações" onClick={handleNewMovie}/>
         </div>
 
       </Form>
